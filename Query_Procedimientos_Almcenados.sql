@@ -30,6 +30,7 @@ create procedure insert_pelicula
     as   begin
         if exists(select titulo from Peliculas where titulo=@titulo)    
         select 'La pelicula ya existe'   
+        else 
             begin    
             insert into Peliculas(titulo,duracion,directores_id,clasificacion_id)    
             values(@titulo,@duracion,@directores_id,@clasificacion_id)    
